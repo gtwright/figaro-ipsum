@@ -1,11 +1,24 @@
 {
-  "name": "figaro_ipsum",
-  "version": "0.0.1",
-  "description": "Lorem ipsum from the libretto of the Marriage of Figaro",
+  "name": "figaro-ipsum",
+  "version": "0.1.0",
+  "description": "Lorem Ipsum generated from the libretto of Marriage of Figaro",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtwright/figaro-ipsum.git"
+  },
+  "keywords": [
+    "lorem",
+    "ipsum",
+    "figaro"
+  ],
+  "author": "Graham Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtwright/figaro-ipsum/issues"
+  },
+  "homepage": "https://github.com/gtwright/figaro-ipsum#readme"
 }
