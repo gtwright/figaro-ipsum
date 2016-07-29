@@ -5,5 +5,5 @@ var querystring = require('querystring');
 var http = require('http');
 http.createServer(function (request, response) {
 	router.home(request, response);
-}).listen(3000);
-console.log('Server running on port 3000');
+}).listen(process.env.PORT || 3000);
+console.log('Server running');
