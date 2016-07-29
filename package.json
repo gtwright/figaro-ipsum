@@ -2,7 +2,7 @@
   "name": "figaro-ipsum",
   "version": "0.1.0",
   "description": "Lorem Ipsum generated from the libretto of Marriage of Figaro",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
