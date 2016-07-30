@@ -12,19 +12,22 @@ html
 					|Figaro Ipsum
 					.small
 						|How many paragraphs? 
-						select(onchange="loadIpsum()")#paragraphs
+						select#paragraphs
 							- var n = 1
 							while n < 21
 								option(value=n)=n
 								- n++
 			#ipsum
 				!=message
-		script.
-			var e = document.getElementById('paragraphs');
-			function loadIpsum(){
-				window.location.search = "?p=" + e.value;
-			}
-			e.value = #{selected}
-		script(src="https://code.jquery.com/jquery-3.1.0.min.js", integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin="anonymous")
 
+
+		script(src="https://code.jquery.com/jquery-3.1.0.min.js", integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin="anonymous")
+		script.
+			var $selector = $('#paragraphs');
+			var $ipsum = $('#ipsum');
+
+			$selector.on("change", function(){
+				var url = "/ipsum" + "?=" + $selector.val();
+				$ipsum.load(url);
+			});
 
