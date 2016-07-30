@@ -1,9 +1,13 @@
 body {
-	background-color: #3D93C2;
 	font-family: 'Playfair Display', serif;
+}
+
+.page-header,
+div.small {
+	background-color: #3D93C2;
 	color: white;
 }
 
-div.small {
-	color: white;
+.page-header {
+	margin-top: 0;
 }

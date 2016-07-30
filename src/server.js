@@ -9,14 +9,14 @@ app.set('views', __dirname + '/views');
 app.use('/static', express.static( __dirname + '/public'));
 
 app.get('/', function(req, res){
-	var paragraph = req.query.p || 2
+	var paragraph = req.query.p || 4
 	res.render('index', {message: ipsum(paragraph),
 		selected: paragraph
 	});
 });
 
 app.get('/ipsum/', function(req, res){
-	var paragraph = req.query.p || 2
+	var paragraph = req.query.p || 4
 	res.send(ipsum(paragraph));
 });
 

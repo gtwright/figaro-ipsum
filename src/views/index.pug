@@ -6,17 +6,18 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic', rel='stylesheet')
 		link(href="/static/main.css", rel="stylesheet")
 	body
-		.container
-			.page-header
+		.page-header
+			.container
 				h1
 					|Figaro Ipsum
-					.small
-						|How many paragraphs? 
-						select#paragraphs
-							- var n = 1
-							while n < 21
-								option(value=n)=n
-								- n++
+				.small
+					|How many paragraphs? 
+					select#paragraphs(choice=paragraph, value=selected)
+						- var n = 1
+						while n < 21
+							option(value=n)=n
+							- n++
+		.container
 			#ipsum
 				!=message
 
@@ -27,7 +28,11 @@ html
 			var $ipsum = $('#ipsum');
 
 			$selector.on("change", function(){
-				var url = "/ipsum" + "?=" + $selector.val();
+				var url = "/ipsum" + "?p=" + $selector.val();
 				$ipsum.load(url);
+			});
+
+			$(function(){
+				$selector.val("#{selected}");
 			});
 
