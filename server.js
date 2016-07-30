@@ -1,9 +1,14 @@
-var router = require('./router.js');
-var querystring = require('querystring');
+'user strict';
 
-//Create a web server
-var http = require('http');
-http.createServer(function (request, response) {
-	router.home(request, response);
-}).listen(process.env.PORT || 3000);
-console.log('Server running');
+var express = require('express');
+var ipsum = require('./ipsum.js');
+var app = express();
+
+app.set('view engine', 'pug');
+app.set('views', './views');
+
+app.get('/', function(req, res){
+	res.render('index', {message: ipsum(req.query.p)});
+});
+
+app.listen(3000);
