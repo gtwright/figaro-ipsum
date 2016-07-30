@@ -1,0 +1,21 @@
+html
+	head
+		title Figaro Ipsum
+	body
+		.container
+			!=message
+		span
+			|How many paragraphs? 
+		select(onchange="loadIpsum()")#paragraphs
+			- var n = 1
+			while n < 11
+				option(value=n)=n
+				- n++
+		script.
+			var e = document.getElementById('paragraphs');
+			function loadIpsum(){
+				window.location.search = "?p=" + e.value;
+			}
+			e.value = #{selected}
+
+
