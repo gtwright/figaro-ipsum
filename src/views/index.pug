@@ -1,16 +1,21 @@
 html
 	head
 		title Figaro Ipsum
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
 	body
 		.container
-			!=message
-		span
-			|How many paragraphs? 
-		select(onchange="loadIpsum()")#paragraphs
-			- var n = 1
-			while n < 11
-				option(value=n)=n
-				- n++
+			.page-header
+				h1
+					|Figaro Ipsum
+					.small
+						|How many paragraphs? 
+						select(onchange="loadIpsum()")#paragraphs
+							- var n = 1
+							while n < 21
+								option(value=n)=n
+								- n++
+			.ispum
+				!=message
 		script.
 			var e = document.getElementById('paragraphs');
 			function loadIpsum(){
