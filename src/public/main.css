@@ -11,3 +11,7 @@ div.small {
 .page-header {
 	margin-top: 0;
 }
+
+select#paragraphs {
+    color: black;
+}
